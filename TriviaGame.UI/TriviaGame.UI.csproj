@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\js\site.js" />
     <None Include="wwwroot\lib\bookBlock\fonts\.DS_Store" />
   </ItemGroup>
 
