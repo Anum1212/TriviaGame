@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TriviaGame.Models\TriviaGame.Models.csproj" />
+  </ItemGroup>
+
 </Project>
