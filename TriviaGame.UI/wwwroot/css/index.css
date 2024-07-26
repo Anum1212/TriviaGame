@@ -1,0 +1,183 @@
+
+.bb-custom-wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+    .bb-custom-wrapper .bb-bookblock {
+        margin: 2rem auto;
+        min-height: 40rem;
+        width: inherit;
+        box-shadow: 0 12px 20px -10px rgba(81,64,49,0.6);
+    }
+
+
+.topSection {
+    width: 100%;
+    position: absolute;
+    top: 3rem;
+}
+
+    .topSection h1 {
+        font-size: 2.5rem;
+    }
+
+.middleSection {
+    width: 100%;
+    position: absolute;
+    top: 10rem;
+}
+
+
+.bottomSection {
+    width: 100%;
+    position: absolute;
+    bottom: 5rem;
+}
+
+    .bottomSection button {
+        width: 75%;
+    }
+
+.middleSection #svgLarge {
+    width: 80%;
+}
+
+.middleSection #svgSmall {
+    margin-top: -2rem;
+    width: 30%;
+}
+
+.triviaCardFooter {
+    position: absolute;
+    bottom: 2rem;
+    width: 90%;
+}
+
+
+/* ------------------------------------------ Score Page ------------------------------------------ */
+.bb-custom-wrapper .scoreTracker {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 0.4em 0 1em;
+}
+
+#scoreCard {
+    position: relative;
+    margin: 0 auto;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    background-color: #F2F0F0;
+    box-shadow: 0px 3px 10px #aaa, inset 0px 2px 4px #F2F0F0;
+    cursor: pointer;
+}
+
+#circleAnimation {
+    position: absolute;
+    top: -1.5rem;
+    left: -1.5rem;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    border-left: 10px solid rgba(255, 255, 255, 0.6);
+    border-right: 10px solid rgba(255, 255, 255, 0.6);
+    box-sizing: unset;
+}
+
+#score {
+    position: absolute;
+    top: 3rem;
+    left: 2rem;
+    font-size: 2.5rem;
+    color: #a7a7a7;
+}
+
+    #score p {
+        margin: 0;
+    }
+
+
+/* ------------------------------------------ Site Footer ------------------------------------------ */
+#siteFooter {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    margin-top: 6rem;
+    width: 100%;
+    height: 3rem;
+    color: #fff;
+    padding: 0.5rem;
+    background-color: #141d2a;
+}
+
+    #siteFooter #layerEffect {
+        position: absolute;
+        left: 0;
+        bottom: 2rem;
+        width: 50%;
+        font-size: 2rem;
+        -webkit-box-shadow: -1rem -1rem 0 0 rgba(52, 58, 64, 0.2);
+        box-shadow: -1rem -1rem 0 0 rgba(52, 58, 64, 0.2);
+        background-color: #8186d5;
+        left: 25%;
+    }
+
+        #siteFooter #layerEffect a {
+            margin: 0;
+            color: #fff;
+            text-decoration: unset;
+        }
+
+
+/* ------------------------------------------ No JS ------------------------------------------ */
+.no-js .bb-custom-wrapper {
+    height: auto;
+}
+
+.no-js .bb-custom-content {
+    height: 470px;
+}
+
+
+/* ------------------------------------------ Media Queries ------------------------------------------ */
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+    .middleSection #svgLarge {
+        width: 60%;
+    }
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    .bb-custom-wrapper {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .middleSection #svgLarge {
+        width: 80%;
+    }
+
+    .middleSection #svgSmall {
+        margin-top: -2rem;
+        width: 20%;
+    }
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+
+    .middleSection #svgLarge {
+        width: 40%;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}
+
+/* XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) {
+}
