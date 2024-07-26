@@ -17,22 +17,36 @@
     <title>@ViewData["Title"]TriviaGame - Portfolio Project</title>
 </head>
 <body>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+        <footer id="siteFooter">
+            <div class="site-section">
+                <div class="container">
+                    <div id="layerEffect" class="text-center align-items-center">
+                        <a href="https://github.com/Anum1212" target="_blank">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="www.linkedin.com/in/anamamer-" target="_blank">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="mailto:anamamer0@gmail.com">
+                            <i class="bi bi-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - TriviaGame.UI - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/lib/bookBlock/js/jquerypp.custom.js"></script>
     <script src="~/lib/bookBlock/js/jquery.bookblock.min.js"></script>
     <script src="~/js/index.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>
