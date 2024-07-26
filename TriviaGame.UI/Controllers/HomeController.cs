@@ -1,32 +1,37 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using TriviaGame.Business.Interfaces;
+using TriviaGame.Models;
 using TriviaGame.UI.Models;
 
 namespace TriviaGame.UI.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IQuestionCategories _questionCategories;
+        private readonly IQuestionDetails _questionDetails;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IQuestionCategories questionCategories, IQuestionDetails questionDetails)
         {
-            _logger = logger;
+            _questionCategories = questionCategories;
+            _questionDetails = questionDetails;
         }
 
         public IActionResult Index()
         {
-            return View();
+            List<CategoryModel> categoryModel = _questionCategories.GetTriviaQuestionCategories();
+            return View(categoryModel);
         }
 
-        public IActionResult Privacy()
+        public IActionResult InitializeTrivia(string category, string difficulty)
         {
-            return View();
+            List<ResultModel> triviaQuestionsList = _questionDetails.GetTriviaQuestions(category, difficulty);
+            return Json(triviaQuestionsList);
         }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public AnswerModel CheckAnswer(int questionNumber, string answerSelected)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            AnswerModel answerModel = _questionDetails.GetTriviaCorrectAnswer(questionNumber, answerSelected);
+            return answerModel;
         }
     }
 }
