@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\lib\bookBlock\fonts\.DS_Store" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TriviaGame.Business\TriviaGame.Business.csproj" />
     <ProjectReference Include="..\TriviaGame.Models\TriviaGame.Models.csproj" />
   </ItemGroup>
