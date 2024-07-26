@@ -1,5 +1,4 @@
 ﻿using TriviaGame.Models;
-using System.Threading.Tasks;
 
 
 namespace TriviaGame.Business.Interfaces

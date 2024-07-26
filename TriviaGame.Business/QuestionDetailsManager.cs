@@ -1,13 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using TriviaGame.Business.Interfaces;
+﻿using TriviaGame.Business.Interfaces;
 using TriviaGame.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace TriviaGame.Business
 {
