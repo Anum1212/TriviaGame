@@ -100,14 +100,11 @@
 
 /* ------------------------------------------ Site Footer ------------------------------------------ */
 #siteFooter {
-    position: relative;
-    left: 0;
+    position: absolute;
     bottom: 0;
-    margin-top: 6rem;
     width: 100%;
     height: 3rem;
     color: #fff;
-    padding: 0.5rem;
     background-color: #141d2a;
 }
 
@@ -124,20 +121,10 @@
     }
 
         #siteFooter #layerEffect a {
-            margin: 0;
+            margin: 1rem;
             color: #fff;
             text-decoration: unset;
         }
-
-
-/* ------------------------------------------ No JS ------------------------------------------ */
-.no-js .bb-custom-wrapper {
-    height: auto;
-}
-
-.no-js .bb-custom-content {
-    height: 470px;
-}
 
 
 /* ------------------------------------------ Media Queries ------------------------------------------ */
@@ -164,6 +151,9 @@
         margin-top: -2rem;
         width: 20%;
     }
+    #siteFooter #layerEffect a {
+        margin: 2rem;
+    }
 }
 
 /* Large devices (desktops, 992px and up)*/
@@ -171,6 +161,9 @@
 
     .middleSection #svgLarge {
         width: 40%;
+    }
+    #siteFooter #layerEffect a {
+        margin: 4rem;
     }
 }
 
@@ -180,4 +173,14 @@
 
 /* XX-Large devices (larger desktops, 1400px and up)*/
 @media (min-width: 1400px) {
+}
+
+
+/* ------------------------------------------ No JS ------------------------------------------ */
+.no-js .bb-custom-wrapper {
+    height: auto;
+}
+
+.no-js .bb-custom-content {
+    height: 470px;
 }
