@@ -1,7 +1,16 @@
+using TriviaGame.Business.Interfaces;
+using TriviaGame.Business;
+using ISession = TriviaGame.Business.Interfaces.ISession;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IQuestionCategories, QuestionCategoriesManager>();
+builder.Services.AddScoped<IQuestionDetails, QuestionDetailsManager>();
+builder.Services.AddScoped<ISession, SessionManager>();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddSession();
 
 var app = builder.Build();
 
