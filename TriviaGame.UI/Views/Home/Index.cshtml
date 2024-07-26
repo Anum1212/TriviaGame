@@ -1,8 +1,148 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@using Open_Trivia.Models
+@model List<CategoryModel>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<div id="bb-custom-wrapper" class="bb-custom-wrapper">
+    <div id="triviaBook" class="bb-bookblock">
+
+
+
+        <div id="frontPage" class="bb-item">
+            <div class="topSection">
+                <h1>Open Trivia</h1>
+            </div>
+
+            <div class="middleSection">
+                <div id="frontPageLogo" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svgLarge" class="svg" x="0px" y="0px" viewBox="0 0 213.235 241.176" enable-background="new 0 0 213.235 241.176" xml:space="preserve" fill="#0057B8">
+                    <path d="M108.581,64.968V14.124l44.007,25.422L108.581,64.968" />
+                    <path fill-opacity="0.9" d="M153.591,92.101V41.258L109.582,66.68L153.591,92.101" /><path d="M155.586,92.062V41.221l44.009,25.42L155.586,92.062" /><path fill-opacity="0.7" d="M200.299,119.14V68.297l-44.004,25.421L200.299,119.14" /><path fill-opacity="0.85" d="M155.586,146.255V95.412l44.009,25.422L155.586,146.255" /><path fill-opacity="0.7" d="M200.299,173.35v-50.844l-44.004,25.422L200.299,173.35" /><path fill-opacity="0.6" d="M155.586,200.482v-50.84l44.009,25.417L155.586,200.482" /><path fill-opacity="0.5" d="M153.591,200.521v-50.84l-44.009,25.418L153.591,200.521" /><path fill-opacity="0.6" d="M108.581,227.696v-50.844l44.007,25.421L108.581,227.696" /><path fill-opacity="0.5" d="M106.62,227.696v-50.844l-44.005,25.421L106.62,227.696" /><path fill-opacity="0.7" d="M61.562,200.553V149.71l44.007,25.423L61.562,200.553" /><path fill-opacity="0.7" d="M59.709,200.56v-50.843l-44.008,25.422L59.709,200.56" /><path fill-opacity="0.7" d="M14.699,173.467v-50.843l44.01,25.42L14.699,173.467" /><path fill-opacity="0.5" d="M59.709,146.235V95.392l-44.008,25.42L59.709,146.235" /><path fill-opacity="0.7" d="M14.699,119.141V68.297l44.01,25.421L14.699,119.141" /><path fill-opacity="0.6" d="M59.709,92.101V41.258L15.701,66.68L59.709,92.101" /><path fill-opacity="0.85" d="M61.562,92.092V41.249l44.007,25.419L61.562,92.092" />
+                    <path fill-opacity="0.9" d="M106.62,64.968V14.124L62.614,39.546L106.62,64.968" /></svg>
+                </div>
+            </div>
+            <div id="startTriviaBtnDiv" class="bottomSection">
+                <button type="button" id="startTriviaBtn" class="btn btn-success">Start Trivia</button>
+            </div>
+        </div>
+
+
+        <div id="configPage" class="bb-item">
+            <div class="topSection">
+                <h1>Open Trivia</h1>
+            </div>
+            <div class="middleSection">
+                <div id="configPageLogo" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svgSmall" class="svg" x="0px" y="0px" viewBox="0 0 213.235 241.176" enable-background="new 0 0 213.235 241.176" xml:space="preserve" fill="#0057B8">
+                    <path d="M108.581,64.968V14.124l44.007,25.422L108.581,64.968" />
+                    <path fill-opacity="0.9" d="M153.591,92.101V41.258L109.582,66.68L153.591,92.101" /><path d="M155.586,92.062V41.221l44.009,25.42L155.586,92.062" /><path fill-opacity="0.7" d="M200.299,119.14V68.297l-44.004,25.421L200.299,119.14" /><path fill-opacity="0.85" d="M155.586,146.255V95.412l44.009,25.422L155.586,146.255" /><path fill-opacity="0.7" d="M200.299,173.35v-50.844l-44.004,25.422L200.299,173.35" /><path fill-opacity="0.6" d="M155.586,200.482v-50.84l44.009,25.417L155.586,200.482" /><path fill-opacity="0.5" d="M153.591,200.521v-50.84l-44.009,25.418L153.591,200.521" /><path fill-opacity="0.6" d="M108.581,227.696v-50.844l44.007,25.421L108.581,227.696" /><path fill-opacity="0.5" d="M106.62,227.696v-50.844l-44.005,25.421L106.62,227.696" /><path fill-opacity="0.7" d="M61.562,200.553V149.71l44.007,25.423L61.562,200.553" /><path fill-opacity="0.7" d="M59.709,200.56v-50.843l-44.008,25.422L59.709,200.56" /><path fill-opacity="0.7" d="M14.699,173.467v-50.843l44.01,25.42L14.699,173.467" /><path fill-opacity="0.5" d="M59.709,146.235V95.392l-44.008,25.42L59.709,146.235" /><path fill-opacity="0.7" d="M14.699,119.141V68.297l44.01,25.421L14.699,119.141" /><path fill-opacity="0.6" d="M59.709,92.101V41.258L15.701,66.68L59.709,92.101" /><path fill-opacity="0.85" d="M61.562,92.092V41.249l44.007,25.419L61.562,92.092" />
+                    <path fill-opacity="0.9" d="M106.62,64.968V14.124L62.614,39.546L106.62,64.968" />
+                    </svg>
+                </div>
+                <div class="w-75 my-5 mx-auto">
+                    <div id="categorySelect" class="mb-3">
+                        <h3 class="text-start fw-normal mb-1">Trivia Topic</h3>
+                        <select id="categoryList">
+                            @foreach (var category in Model)
+                            {
+                                <option value="@category.id" onclick="alert('hi)'">@category.name</option>
+                            }
+                        </select>
+                    </div>
+                    <div id="difficultySelect" class="mt-3">
+                        <h3 class="text-start fw-normal mb-1">Difficulty</h3>
+                        <select id="difficulty" class="">
+                            <option id="easy" value="easy">Easy</option>
+                            <option id="medium" value="medium">Medium</option>
+                            <option id="hard" value="hard">Hard</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="confirmTriviaConfigDiv" class="bottomSection">
+                <button type="button" id="confirmTriviaConfig" class="btn btn-success">Begin</button>
+            </div>
+        </div>
+
+
+        @for (int i = 1; i <= 19; i++)
+        {
+            <div id="questionCard-@i" class="bb-item">
+                <div class="card-header bg-primary text-light">
+                    <h3 class="scoreTracker col-6 card-title text-start">
+                        Score:
+                        <span class="currentScore">
+                            0
+                        </span>/20
+                    </h3>
+                    <h3 class="card-title fw-bolder question">
+                        @*dislay question here*@
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush multipleChoice">
+                        @*display multiple choice here*@
+                    </ul>
+                    <div id="footer-@i" class="triviaCardFooter" hidden>
+                        <button type="button" class="nextQuestion btn btn-danger">
+                            Next Question
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div id="questionCard-20" class="bb-item">
+            <div class="card-header bg-primary text-light">
+                <p class="scoreTracker col-6 card-title text-start">
+                    Score:
+                    <span class="currentScore">
+                        0
+                    </span>/20
+                </p>
+                <h3 class="card-title fw-bolder question">
+                    @*dislay question here*@
+                </h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush multipleChoice">
+                    @*display multiple choice here*@
+                </ul>
+                <div id="footer-20" hidden>
+                    <button type="button" id="triviaResult" class="nextQuestion btn btn-danger">
+                        Trivia Result
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="totalScore" class="bb-item">
+            <div class="topSection">
+                <h1 class="card-title text-center w-100">
+                    Your Score
+                </h1>
+            </div>
+            <div class="middleSection">
+                <div id="scoreCard">
+                    <div id="circleAnimation" class="circleAnimationFail">
+                    </div>
+                    <div id="score">
+                        <p>
+                            <span class="currentScore">
+                                0
+                            </span>/20
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="retryDiv" class="bottomSection">
+                <button type="button" id="retryBtn" class="btn btn-success">Retry</button>
+            </div>
+        </div>
+    </div>
 </div>
+
+@section Scripts {
+    <script>
+        TriviaBook.init();
+    </script>
+}
